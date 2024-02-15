@@ -50,6 +50,6 @@ public class Main {
 		
 		// Printing out the mortgage value in its currency format
 		NumberFormat mortgageFormatted = NumberFormat.getCurrencyInstance();
-		System.out.println("Mortgage: " + mortgageFormatted + mortgage);
+		System.out.println("Mortgage: " + "$" + mortgage);
 	}
 }
