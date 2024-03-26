@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class AdmissionTest1 {
+	public static void main(String[] args) {
+		Scanner k = new Scanner(System.in);
+		System.out.print("The program prints the volume, LSA, TSA and slant height of a "
+				+ "square pyramid\nwith height h being an odd number ranging from 1 to N "
+				+ "and side length a\nEnter the value for N: ");
+		int N = k.nextInt();
+		System.out.print("Enter the length of side a: ");
+		int a = k.nextInt();
+		System.out.println(" ");
+		System.out.println("Height\tVolume\tLateral Surface Area\tTotal Surface Area\tSlant Height");
+		System.out.println("-----------------------------------------------------------------------------");
+		// Calculating the Volume, LSA, TSA and Slant Height of a square pyramid
+		for(int h = 1; h <= N; h += 2) {
+			double volume = (Math.pow(a, 2) * h)/3;
+			double LSA = a * Math.sqrt((Math.pow(a, 2) + 4 * Math.pow(h, 2)));
+			double TSA = Math.pow(a, 2) + LSA;
+			double SH = Math.sqrt((Math.pow(h, 2) + (Math.pow(a, 2)/4)));
+			System.out.printf("%d\t%.0f m\u00b3\t%.3f m\u00b2\t\t%.3f m\u00b2\t\t%.3f m\n", 
+					h, volume, LSA, TSA, SH);
+		}
+	}
+}
