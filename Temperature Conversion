@@ -1,0 +1,20 @@
+BSD 3-Clause License
+https://github.com/Jidonskii/Javalair/blob/main/BSD%203%20LICENSE
+
+import java.util.Scanner;
+
+public class AdmissionTest3 {
+	public static void main(String[] args) {
+		Scanner k = new Scanner(System.in);
+		System.out.println("Welcome to Saskatchewan! Temperatures here range\nfrom " +
+		"-40 to 40 Celsius. I will print a table for\nyou. Please input the increments:");
+		int n = k.nextInt();
+		System.out.println("------------------------------------");
+		System.out.println("Celsius\t\tFahrenheit");
+		System.out.println("------------------------------------");
+		for(int i = -40; i <= 40; i += n) {
+			double F = ((1.8 * i) + 32);
+			System.out.printf("%d\t\t%.2f\n", i, F);
+		}
+	}
+}
