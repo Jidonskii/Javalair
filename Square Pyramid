@@ -1,3 +1,6 @@
+BSD 3-Clause License
+https://github.com/Jidonskii/Javalair/blob/main/BSD%203%20LICENSE
+
 import java.util.Scanner;
 public class AdmissionTest1 {
 	public static void main(String[] args) {
