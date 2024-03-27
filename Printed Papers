@@ -1,0 +1,70 @@
+BSD 3-Clause License
+https://github.com/Jidonskii/Javalair/blob/main/BSD%203%20LICENSE
+
+import java.util.Scanner;
+
+public class Sample {
+	public static void main(String[] args) {
+		Scanner k = new Scanner(System.in);
+		System.out.println("------------------------------------");
+		System.out.println("INPUT SECTION:");
+		System.out.println("------------------------------------");
+		System.out.print("How many students? ");
+		int n = k.nextInt();
+		
+		String [] names = new String[n];
+		int [] bw = new int[n];
+		int [] color = new int[n];
+		
+		readArray(k, names, bw, color);
+		writeArray(names, bw, color);
+		writeTotal(bw, color);
+		writeAverage(bw, color);
+	}
+	
+	public static void writeTotal(int [] bw, int [] color) {
+		int sum1 = 0, sum2 = 0;
+		for(int i = 0; i < bw.length; i++) {
+			sum1 = sum1 + bw[i];
+			sum2 = sum2 + color[i];
+		}
+		System.out.println("\tTotal\t\t" + sum1 + "\t" + sum2 + "\t" +
+				"$" + ((sum1*0.05 + sum2*0.10) + 0.15*(sum1*0.05 + sum2*0.10)));
+	}
+	public static void writeAverage(int [] bw, int [] color) {
+		int sum1 = 0, sum2 = 0;
+		for(int i = 0; i < bw.length; i++) {
+			sum1 = sum1 + bw[i];
+			sum2 = sum2 + color[i];
+		}
+		System.out.println("\tAverage\t\t" + (sum1/bw.length) + "\t" + (sum2/color.length)
+				+ "\t" + "$" + ((sum1*0.05 + sum2*0.10) + 0.15*(sum1*0.05 + sum2*0.10))/bw.length);
+	}
+	
+	public static void readArray(Scanner k, String [] names, 
+			int [] bw, int [] color) {
+		for(int i = 0; i < names.length; i++) {
+			System.out.print("Name of student " + i + ":");
+			names[i] = k.next();
+			System.out.print("BW copies for " + names[i] + ":");
+			bw[i] = k.nextInt();
+			System.out.print("Color copies for " + names[i] + ":");
+			color[i] = k.nextInt();
+		}
+	}
+	
+	public static void writeArray(String [] names, int [] bw, int [] color) {
+		System.out.println("------------------------------------");
+		System.out.println("OUTPUT SECTION:");
+		System.out.println("------------------------------------");
+		System.out.println("No.\tName\t\tBW copies\tColor copies\tCharge");
+		System.out.println("------------------------------------");
+		
+		for(int i = 0; i < names.length; i++) {
+			double charge = (bw[i]*0.05 + color[i]*0.10) + 0.15 * (bw[i]*0.05 + color[i]*0.10);
+			System.out.println(i + "\t" + names[i] + "\t\t" + bw[i] + "\t" + color[i]
+					+ "\t" + "$" + charge);	
+		}
+		System.out.println("------------------------------------");
+	}
+}
