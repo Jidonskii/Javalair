@@ -30,3 +30,4 @@ public class Main{
 		return Math.max(arr[a-1], HistogramArea(arr, a-1));
 	}
 }
+
