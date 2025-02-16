@@ -1,6 +1,3 @@
-MIT License
-https://github.com/Jidonskii/Javalair/blob/main/MIT%20LICENSE
-
 import java.text.NumberFormat;
 import java.util.Scanner;
 
